@@ -10,13 +10,12 @@ import com.lambda.collect.datalayer.builder.types.Updates;
 import com.lambda.collect.datalayer.db.DbSession;
 import com.lambda.collect.datalayer.db.RsMapper;
 import com.lambda.collect.datalayer.types.*;
-import lombok.extern.slf4j.Slf4j;
 
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.*;
 
-@Slf4j
+
 public abstract class AbstractTable<K> implements Table {
     private Connection connection;
 
@@ -321,7 +320,7 @@ public abstract class AbstractTable<K> implements Table {
     public K insert(K model) throws Exception {
         DbSession dbSession = new DbSession(connection);
         String query = Insert.into(this).values(mapInsert(model)).build();
-        log.info("Query: " + query);
+
         dbSession.insert(query);
         List<K> response = dbSession.mapSelect(this::map);
         dbSession.close();
