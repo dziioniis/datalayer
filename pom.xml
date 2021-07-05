@@ -13,7 +13,7 @@
     <version>0.0.1</version>
     <name>collect</name>
     <description>Datalayer library setup</description>
-    <url>http://github.com/dziioniis/dziioniis</url>
+    <url>http://github.com/dziioniis/datalayer</url>
     <properties>
         <java.version>1.8</java.version>
     </properties>
